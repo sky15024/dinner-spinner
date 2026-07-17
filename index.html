@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>今晚吃什麼？| 晚餐轉盤</title>
+    <meta name="description" content="選擇困難症救星！自訂選項，轉一轉就知道晚餐吃什麼">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-particles" id="bgParticles"></div>
+    
+    <div class="app-container">
+        <header class="app-header">
+            <h1 class="title">
+                <span class="title-emoji">🍽️</span>
+                今晚吃什麼？
+            </h1>
+            <p class="subtitle">選擇困難症救星 — 轉一轉就知道！</p>
+        </header>
+
+        <main class="main-content">
+            <div class="wheel-section">
+                <div class="wheel-wrapper">
+                    <div class="wheel-pointer">▼</div>
+                    <canvas id="wheelCanvas" width="420" height="420"></canvas>
+                    <div class="wheel-center-btn" id="spinBtn">
+                        <span>轉</span>
+                    </div>
+                    <div class="wheel-glow"></div>
+                </div>
+            </div>
+
+            <div class="controls-section">
+                <div class="input-card">
+                    <h2 class="card-title">✏️ 自訂選項</h2>
+                    <div class="input-group">
+                        <input type="text" id="optionInput" placeholder="輸入餐廳或料理名稱..." maxlength="20" autocomplete="off">
+                        <button id="addBtn" class="btn-add">
+                            <span class="btn-icon">+</span>
+                            新增
+                        </button>
+                    </div>
+                    <div class="options-list" id="optionsList"></div>
+                    <div class="quick-actions">
+                        <button id="clearAllBtn" class="btn-clear">🗑️ 清空全部</button>
+                        <button id="presetBtn" class="btn-preset">🎲 隨機範例</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Result Modal -->
+    <div class="modal-overlay" id="resultModal">
+        <div class="modal-content">
+            <div class="modal-celebration">🎉</div>
+            <h2 class="modal-title">今晚就吃</h2>
+            <div class="modal-result" id="resultText"></div>
+            <p class="modal-sub">就決定是你了！</p>
+            <button class="btn-modal-close" id="modalCloseBtn">好的！</button>
+        </div>
+    </div>
+
+    <!-- Confetti Canvas -->
+    <canvas id="confettiCanvas"></canvas>
+
+    <script src="app.js"></script>
+</body>
+</html>
