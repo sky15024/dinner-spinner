@@ -1,0 +1,22 @@
+{
+  "name": "今晚吃什麼？ | 文青風晚餐轉盤",
+  "short_name": "晚餐轉盤",
+  "description": "選擇困難症救星 — 轉一轉就知道晚餐吃什麼！",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#eef3e8",
+  "theme_color": "#6e8a5a",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

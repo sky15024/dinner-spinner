@@ -149,12 +149,17 @@ body::before {
     font-weight: 900;
     color: #45543c;
     letter-spacing: 0.04em;
+    text-indent: 0.04em;
+    text-align: center;
     line-height: 1.3;
     margin-bottom: 0.6rem;
 }
 
 .title-emoji {
-    display: inline-block;
+    display: block;
+    font-size: 2.8rem;
+    margin-bottom: 0.4rem;
+    text-align: center;
     animation: gentleSway 3s ease-in-out infinite;
 }
 
@@ -170,6 +175,8 @@ body::before {
     color: var(--text-secondary);
     font-weight: 500;
     letter-spacing: 0.06em;
+    text-indent: 0.06em;
+    text-align: center;
 }
 
 /* Decorative line under header */
@@ -180,6 +187,8 @@ body::before {
     color: var(--warm-sage);
     font-size: 0.85rem;
     letter-spacing: 0.5em;
+    text-indent: 0.5em;
+    text-align: center;
 }
 
 /* ============================================

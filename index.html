@@ -9,6 +9,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <!-- PWA Meta Tags -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#6e8a5a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="晚餐轉盤">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
 <body>
     <div class="bg-particles" id="bgParticles"></div>
@@ -16,7 +23,7 @@
     <div class="app-container">
         <header class="app-header">
             <h1 class="title">
-                <span class="title-emoji">🍽️</span>
+                <div class="title-emoji">🍽️</div>
                 今晚吃什麼？
             </h1>
             <p class="subtitle">選擇困難症救星 — 轉一轉就知道！</p>
@@ -69,5 +76,14 @@
     <canvas id="confettiCanvas"></canvas>
 
     <script src="app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(reg => console.log('Service Worker registered successfully.', reg))
+                    .catch(err => console.log('Service Worker registration failed.', err));
+            });
+        }
+    </script>
 </body>
 </html>

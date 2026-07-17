@@ -55,8 +55,10 @@
     let dpr = window.devicePixelRatio || 1;
 
     function resizeCanvas() {
-        const container = canvas.parentElement;
-        const maxW = Math.min(container.clientWidth - 20, 420);
+        // Use document.documentElement.clientWidth to avoid circular parent-width calculation which overflows on mobile
+        const viewportW = document.documentElement.clientWidth;
+        const padding = viewportW <= 480 ? 32 : 40; // 16px padding on each side for mobile
+        const maxW = Math.min(viewportW - padding, 420);
         wheelSize = maxW;
 
         canvas.style.width = wheelSize + 'px';
